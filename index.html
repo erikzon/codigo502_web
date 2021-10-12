@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
     <title>Codigo 502</title>
 </head>
@@ -62,6 +61,19 @@
         </section>
     </main>
     <footer>
+        
+        <form action="" id="formDateEditor">
+            <label for="inputdia">Dia</label>
+            <input type="text" placeholder="dia" id="inputDia">
+            <label for="inputLugar">Lugar</label>
+            <input type="text" placeholder="lugar" id="inputLugar">
+            <label for="inputTipo">Tipo</label>
+            <input type="text" placeholder="tipo" id="inputTipo">
+            <button id="buttonAñadir" class="button">Añadir Fecha</button>
+            
+        </form>
+        <button id="botonModo" class="button">MODO EDICION</button>
+        
         <article>
             <a href="https://www.claromusica.com/artist/2031265/GT" target="_blank"><img
                     src="/assets/claromusica-web.webp" alt="codigo_502" id="streamingPlatform">
@@ -77,11 +89,12 @@
             </a>
         </article>
         <article>
-            <audio autoplay controls src="assets/Codigo 502-Mis Quetzalitos.mp3">
-                Your browser does not support the audio element.
+            <audio controls src="assets/Codigo 502-Mis Quetzalitos.mp3">
             </audio>
         </article>
     </footer>
 </body>
+<script src="app.js"></script>
+
 
 </html>
