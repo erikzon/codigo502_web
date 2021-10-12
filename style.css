@@ -10,10 +10,15 @@ body {
 }
 
 #bandPhoto {
-    width: 90%;
+    max-height: 18rem;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+}
+
+@media (min-width: 40em) {
+    #bandPhoto{
+        max-height: 28rem;
+    }
 }
 
 #streamingPlatform {
@@ -24,13 +29,18 @@ body {
 table {
     width: 100%;
     text-align: left;
-    margin-top: 1em;
     margin-bottom: 2em;
-    font-size: larger;
+    font-size: 1.4rem;
+}
+
+@media (min-width: 40em) {
+    table{
+        font-size: 2rem;
+    }
 }
 
 caption{
-    font-size: xx-large;
+    font-size: 4rem;
 }
 
 #date {
@@ -44,3 +54,11 @@ caption{
 #type {
     width: 1em;
 }
+
+td::first-letter {
+    color:rgb(255, 230, 91);
+}
+td::nth {
+    color:rgb(255, 230, 91);
+}
+
