@@ -9,16 +9,16 @@ body {
     align-items: center;
 }
 
+@media (min-width:60em){
+    main{
+        display: flex;
+    }
+}
+
 #bandPhoto {
     max-height: 18rem;
     display: block;
     margin: 0 auto;
-}
-
-@media (min-width: 40em) {
-    #bandPhoto{
-        max-height: 28rem;
-    }
 }
 
 #streamingPlatform {
@@ -34,6 +34,10 @@ table {
 }
 
 @media (min-width: 40em) {
+    #bandPhoto{
+        max-height: 28rem;
+    }
+
     table{
         font-size: 2rem;
     }
@@ -55,10 +59,11 @@ caption{
     width: 1em;
 }
 
-td::first-letter {
-    color:rgb(255, 230, 91);
+th {
+    background-color: hsl(51, 100%, 68%,10%);
 }
-td::nth {
-    color:rgb(255, 230, 91);
+
+tr:nth-child(even) {
+    background-color:hsl(51, 100%, 68%,10%);
 }
 
