@@ -23,8 +23,8 @@
             <img src="/assets/bandPhoto.webp" alt="codigo_502" id="bandPhoto">
         </section>
         <section id="dates">
-            <table>
-                <caption>OCTUBRE 2021</caption>
+            <table id="datesTable">
+                <caption id="datesTitle">OCTUBRE 2021</caption>
                 <thead>
                     <th id="date">dia</th>
                     <th id="place">lugar</th>
@@ -61,19 +61,31 @@
         </section>
     </main>
     <footer>
-        
-        <form action="" id="formDateEditor">
+
+        <form action="#" id="formDateEditor">
             <label for="inputdia">Dia</label>
-            <input type="text" placeholder="dia" id="inputDia">
+            <input type="text" placeholder="mes 20XX" id="inputTitulo">
+            <button id="buttonTitulo" class="button" type="button" onclick="changeTitle()">Cambiar Titulo</button>
+            <label for="inputdia">Dia</label>
+            <input type="number" placeholder="dia del mes" id="inputDia" max="31" min="1">
             <label for="inputLugar">Lugar</label>
-            <input type="text" placeholder="lugar" id="inputLugar">
+            <input type="text" placeholder="lugar donde se realizara el evento" id="inputLugar">
             <label for="inputTipo">Tipo</label>
-            <input type="text" placeholder="tipo" id="inputTipo">
-            <button id="buttonAñadir" class="button">Añadir Fecha</button>
-            
+            <input type="text" placeholder="tipo de evento" id="inputTipo">
+            <button id="buttonAñadir" class="button" type="button" onclick="addEvent()">Añadir Evento</button>
+            <label for="inputTipo">Eliminar </label>
+            <select name="selectDelete" id="selectDelete">
+                <!-- <option>option list is javascript injected</option> -->
+            </select>
+            <div id="buttonGroup">
+                <button id="buttonEliminar" class="button" type="button" onclick="deleteEvent()">Eliminar Evento</button>
+                <button id="buttonEliminarTodo" class="button" type="button" onclick="deleteAllEvents()">Eliminar Todos</button>
+            </div>
+            <button class="hide" id="buttonReset" type="reset">X</button>
         </form>
+
         <button id="botonModo" class="button">MODO EDICION</button>
-        
+
         <article>
             <a href="https://www.claromusica.com/artist/2031265/GT" target="_blank"><img
                     src="/assets/claromusica-web.webp" alt="codigo_502" id="streamingPlatform">
