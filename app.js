@@ -1,4 +1,4 @@
-var editmode = true;
+let editmode = false;
 
 function changeTitle() {
     document.getElementById('datesTitle').innerHTML = document.getElementById('inputTitulo').value
@@ -11,6 +11,7 @@ function toggleMode() {
     } else {
         document.getElementById("botonModo").innerHTML = "Modo Edicion"
         document.getElementById("formDateEditor").className += "hide"
+        updateData()
     }
 }
 
@@ -18,7 +19,7 @@ function fillSelect() {
     var Events = document.getElementById("datesTable")
     document.getElementById('selectDelete').innerHTML = '';
     for (let index = 1; index < Events.rows.length; index++) {
-        var option = document.createElement("option"); 
+        var option = document.createElement("option");
         let currentRow = document.getElementById("datesTable").rows[index].cells;
         option.text = `${currentRow[0].innerHTML} | ${currentRow[1].innerHTML} | ${currentRow[2].innerHTML}`
         option.value = index
@@ -58,3 +59,46 @@ document.getElementById("botonModo").addEventListener("click", function () {
     fillSelect()
 });
 
+//////API///////////
+function getData() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+
+    fetch("https://getpantry.cloud/apiv1/pantry/f413b1fd-3e59-47b6-b68f-f5825267d52c/basket/codigo502", requestOptions)
+        .then(response => response.text())
+        .then(result => {
+            let parseResult = JSON.parse(result)
+            document.getElementById("datesTable").getElementsByTagName('tbody')[0].innerHTML = parseResult.tbody;
+            document.getElementById('datesTitle').innerHTML = parseResult.datesTitle;
+        })
+        .catch(error => console.log('error', error));
+}
+getData()
+
+function updateData() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+        "tbody": document.getElementById("datesTable").getElementsByTagName('tbody')[0].innerHTML,
+        'datesTitle': document.getElementById('datesTitle').innerHTML
+    });
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch("https://getpantry.cloud/apiv1/pantry/f413b1fd-3e59-47b6-b68f-f5825267d52c/basket/codigo502", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+}
