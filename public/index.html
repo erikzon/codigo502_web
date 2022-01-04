@@ -44,20 +44,25 @@
     </main>
     <footer>
         <form action="#" id="formDateEditor" class="hide">
-            <label for="inputTitulo">Titulo</label>
-            <input type="text" placeholder="proximos eventos" id="inputTitulo">
+            <label>
+                Titulo<input type="text" placeholder="proximos eventos" id="inputTitulo">
+            </label>
             <button id="buttonTitulo" class="button" type="button" onclick="changeTitle()">Cambiar Titulo</button>
-            <label for="inputdia">Dia</label>
-            <input type="number" placeholder="dia del mes" id="inputDia" max="31" min="1">
-            <label for="inputLugar">Lugar</label>
-            <input type="text" placeholder="lugar donde se realizara el evento" id="inputLugar">
-            <label for="inputTipo">Tipo</label>
-            <input type="text" placeholder="tipo de evento" id="inputTipo">
+            <label>
+                Dia <input type="number" placeholder="dia del mes" id="inputDia" max="31" min="1">
+            </label>
+            <label>
+                Lugar <input type="text" placeholder="lugar donde se realizara el evento" id="inputLugar">
+            </label>
+            <label>
+                Tipo <input type="text" placeholder="tipo de evento" id="inputTipo">
+            </label>
             <button id="buttonAñadir" class="button" type="button" onclick="addEvent()">Añadir Evento</button>
-            <label for="inputTipo">Eliminar </label>
-            <select name="selectDelete" id="selectDelete" title="selectDelete">
+            <label>
+                Eliminar <select name="selectDelete" id="selectDelete" title="selectDelete">
                 <!-- <option>option list is javascript injected</option> -->
-            </select>
+                </select>
+            </label>
             <div id="buttonGroup">
                 <button id="buttonEliminar" class="button" type="button" onclick="deleteEvent()">Eliminar
                     Evento</button>
