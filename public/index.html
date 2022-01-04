@@ -26,9 +26,11 @@
             <table id="datesTable">
                 <caption id="datesTitle"></caption>
                 <thead>
-                    <th id="date">dia</th>
-                    <th id="place">lugar</th>
-                    <th id="type">tipo</th>
+                    <tr>
+                        <th id="date">dia</th>
+                        <th id="place">lugar</th>
+                        <th id="type">tipo</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <!-- <tr>
@@ -41,9 +43,8 @@
         </section>
     </main>
     <footer>
-
         <form action="#" id="formDateEditor" class="hide">
-            <label for="inputdia">Titulo</label>
+            <label for="inputTitulo">Titulo</label>
             <input type="text" placeholder="proximos eventos" id="inputTitulo">
             <button id="buttonTitulo" class="button" type="button" onclick="changeTitle()">Cambiar Titulo</button>
             <label for="inputdia">Dia</label>
@@ -54,39 +55,40 @@
             <input type="text" placeholder="tipo de evento" id="inputTipo">
             <button id="buttonAñadir" class="button" type="button" onclick="addEvent()">Añadir Evento</button>
             <label for="inputTipo">Eliminar </label>
-            <select name="selectDelete" id="selectDelete">
+            <select name="selectDelete" id="selectDelete" title="selectDelete">
                 <!-- <option>option list is javascript injected</option> -->
             </select>
             <div id="buttonGroup">
-                <button id="buttonEliminar" class="button" type="button" onclick="deleteEvent()">Eliminar Evento</button>
-                <button id="buttonEliminarTodo" class="button" type="button" onclick="deleteAllEvents()">Eliminar Todos</button>
+                <button id="buttonEliminar" class="button" type="button" onclick="deleteEvent()">Eliminar
+                    Evento</button>
+                <button id="buttonEliminarTodo" class="button" type="button" onclick="deleteAllEvents()">Eliminar
+                    Todos</button>
             </div>
             <button class="hide" id="buttonReset" type="reset">X</button>
         </form>
 
-        <button id="botonModo" class="button">MODO EDICION</button>
+        <button id="botonModo" class="button" type="button">MODO EDICION</button>
 
         <article>
             <a href="https://www.claromusica.com/artist/2031265/GT" target="_blank"><img
-                    src="assets/claromusica-web.webp" alt="codigo_502" id="streamingPlatform">
+                    src="assets/claromusica-web.webp" alt="codigo_502" class="streamingPlatform">
             </a>
             <a href="https://music.apple.com/us/artist/codigo-502/1255704153" target="_blank">
-                <img src="assets/applemusic-web.webp" alt="codigo_502" id="streamingPlatform">
+                <img src="assets/applemusic-web.webp" alt="codigo_502" class="streamingPlatform">
             </a>
             <a href="https://www.deezer.com/mx/artist/12771173" target="_blank">
-                <img src="assets/deezer-web.webp" alt="codigo_502" id="streamingPlatform">
+                <img src="assets/deezer-web.webp" alt="codigo_502" class="streamingPlatform">
             </a>
             <a href="https://open.spotify.com/artist/2szfVWMH5knuxg9WIUx1hW" target="_blank">
-                <img src="assets/spotify-web.webp" alt="codigo_502" id="streamingPlatform">
+                <img src="assets/spotify-web.webp" alt="codigo_502" class="streamingPlatform">
             </a>
         </article>
         <article>
-            <audio autoplay controls src="assets/Codigo 502-Mis Quetzalitos.mp3">
+            <audio autoplay controls src="assets/Codigo502-MisQuetzalitos.mp3">
             </audio>
         </article>
     </footer>
+    <script src="app.js"></script>
 </body>
-<script src="app.js"></script>
-
 
 </html>

@@ -45,7 +45,7 @@ body {
     margin: 0 auto;
 }
 
-#streamingPlatform {
+.streamingPlatform {
     width: 11em;
 }
 
@@ -103,6 +103,10 @@ audio {
     margin: 1rem 0;
 }
 
+#botonModo{
+    cursor: pointer;
+}
+
 /* FORM */
 #formDateEditor {
     border: 1px solid yellow;
@@ -128,7 +132,7 @@ input, select {
     font-size: 1.6rem;
     margin: 10px auto;
     display: flex;
-    
+    cursor: pointer;
 }
 
 @media (min-width: 40rem){
